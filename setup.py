@@ -27,7 +27,7 @@ setup(
     url="https://github.com/[username]/[name]",
     keywords="deep learning, differential programming, physics, science, statistics",
     packages=find_packages(),
-    package_data={"name": ["py.typed"]},
+    package_data={"pkg_name": ["py.typed"]},
     include_package_data=True,
     python_requires=">=3.8",
     install_requires=requirements,

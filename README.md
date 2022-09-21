@@ -1,5 +1,4 @@
-<!-- [![CI-tests](https://github.com/[username]/[pkg_name]//actions/workflows/tests.yml/badge.svg)](https://github.com/[username]/[pkg_name]/actions)
-[![CI-lints](https://github.com/[username]/[pkg_name]/actions/workflows/linting.yml/badge.svg)](https://github.com/[username]/[pkg_name]/actions) -->
+<!-- [![CI-tests](https://github.com/[username]/[pkg_name]//actions/workflows/CI.yml/badge.svg)](https://github.com/[username]/[pkg_name]/actions) -->
 
 # template_python
 
@@ -13,7 +12,7 @@
 1. Adapt requirements.txt
 1. Adapt and fill setup.py
 1. Adapt `.gitignore` as necessary
-1. Once tests are added, uncomment test CI in `.github/workflows/tests.yml`
+1. Once tests are added, uncomment test CI in `.github/workflows/CI.yml`
 1. For sphinx documentation, update and adapt:
     - `docs/source/conf.py`
     - `docs/run-sphinx-api-doc`
