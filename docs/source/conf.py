@@ -41,7 +41,7 @@ extensions = [
     "sphinx_autodoc_typehints",
     "sphinx_autodoc_annotation",
     "sphinx_rtd_theme",
-    "m2r",
+    "m2r2",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -56,7 +56,7 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 
 # -- Options for HTML output -------------------------------------------------
-html_theme = "default"
+html_theme = "sphinx_rtd_theme"
 # html_favicon = './_static/img/favicon.png'
 
 # Add any paths that contain custom static files (such as style sheets) here,
