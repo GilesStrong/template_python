@@ -14,7 +14,7 @@ with open("requirements.txt", encoding="utf-8") as f:
     requirements = [r for r in f.read().strip().split("\n") if r not in dev_only]
 
 
-exec(open("name/version.py").read())
+exec(open("pkg_name/version.py").read())
 
 setup(
     name="name",
