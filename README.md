@@ -64,4 +64,4 @@ pytest tests/test_my_pkg.py
 1. CD to `docs`
 1. Run `run-sphinx-api-doc`, and adjust source files as necessary
 1. Run `make html`
-`. View local docs by opening `_build/html/index.html` in browser
+1. View local docs by opening `_build/html/index.html` in browser
