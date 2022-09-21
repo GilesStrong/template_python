@@ -1,4 +1,4 @@
-<!-- [![CI-tests](https://github.com/[username]/[pkg_name]//actions/workflows/CI.yml/badge.svg)](https://github.com/[username]/[pkg_name]/actions) -->
+<!-- [![CI-tests](https://github.com/[username]/[pkg_name]//actions/workflows/ci.yml/badge.svg)](https://github.com/[username]/[pkg_name]/actions) -->
 
 # template_python
 
@@ -32,7 +32,9 @@ conda activate pkg_name
 Otherwise set up a suitable environment using your python distribution of choice using the contents of `environment.yml`. Remember to activate the correct environment each time, via e.g. `conda activate pkg_name`.
 
 Install package and dependencies
+
 ```
+pip install -r requirements.txt
 pip install -e .
 ```
 

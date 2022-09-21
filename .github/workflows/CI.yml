@@ -1,4 +1,4 @@
-name: Lint
+name: CI
 
 on:
   push:
@@ -34,27 +34,21 @@ jobs:
         python-version: "3.8"
     - name: Install Dependencies
       run: |
+        pip install -r requirements.txt
         pip install -e .
     - name: mypy
       run: ./run-mypy
 
-# name: Tests
-
-# on:
-#   push:
-#     branches:
-#       - main
-#   pull_request:
-
-#   pytest:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v2
-#       - uses: actions/setup-python@v2
-#         with:
-#           python-version: "3.8"
-#       - name: Install Dependencies
-#         run: |
-#           pip install -e .
-#       - name: pytest
-#         run: pytest tests
+  # pytest:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/setup-python@v2
+  #       with:
+  #         python-version: "3.8"
+  #     - name: Install Dependencies
+  #       run: |
+  #         pip install -r requirements.txt
+  #         pip install -e .
+  #     - name: pytest
+  #       run: pytest tests

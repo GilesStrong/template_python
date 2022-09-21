@@ -17,7 +17,7 @@ with open("requirements.txt", encoding="utf-8") as f:
 exec(open("pkg_name/version.py").read())
 
 setup(
-    name="name",
+    name="pkg_name",
     version=__version__,  # noqa
     author="My Name",
     author_email="myname@email.com",
