@@ -1,22 +1,12 @@
 repos:
-  - repo: https://github.com/psf/black
-    rev: 24.2.0
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.6.7
     hooks:
-      - id: black
-        language_version: python3
-        args: [--line-length=120]
-    
-  - repo: https://github.com/pycqa/isort
-    rev: 5.13.2
-    hooks:
-      - id: isort
-        args: ["--profile", "black", "--filter-files"]
-
-  - repo: https://github.com/pycqa/flake8.git
-    rev: 7.0.0
-    hooks:
-    - id: flake8
-      args: [--ignore=E203 E266 E501 W503 E741 C901 W405 E402 E211 W291 F722 --max-line-length=120]
+      - id: ruff
+        args: [--fix]
+        exclude: '(^dev/)|(\.ipynb$)'
+      - id: ruff-format
+        exclude: '(^dev/)|(\.ipynb$)'
 
   - repo: local
     hooks:
@@ -28,10 +18,27 @@ repos:
         require_serial: true
         verbose: true
 
-  - repo: https://github.com/python-poetry/poetry
-    rev: '1.7.0'
+  # Keep uv.lock up to date
+  - repo: https://github.com/astral-sh/uv-pre-commit
+    rev: 0.8.22   # pin to your uv version
     hooks:
-      - id: poetry-check
-      - id: poetry-lock
-      - id: poetry-export
-        args: ["-f", "requirements.txt", "-o", "requirements.txt", "--with", "dev", "--without-hashes"]
+      - id: uv-lock
+
+  # Fail if uv.lock would change
+  - repo: https://github.com/astral-sh/uv-pre-commit
+    rev: 0.8.22
+    hooks:
+      - id: uv-lock
+        args: ["--check"]  # or "--locked"
+
+  # Export requirements
+  - repo: https://github.com/astral-sh/uv-pre-commit
+    rev: 0.8.22
+    hooks:
+      - id: uv-export
+        args:
+          - "--format=requirements.txt"
+          - "--all-groups"           # or: "--group=dev"
+          - "--no-hashes"
+          - "--output-file=requirements.txt"
+          - "--frozen"               # don’t re-lock during export

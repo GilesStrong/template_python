@@ -1,22 +1,20 @@
-# my_repo
+# my_package
 
 ## Installation
 
-For development usage, we use [`poetry`](https://python-poetry.org/docs/#installing-with-the-official-installer) to handle dependency installation.
-Poetry can be installed via, e.g.
+For development usage, we use [`uv`](https://docs.astral.sh/uv/) to handle dependency installation.
+uv can be installed via, e.g.
 
 ```bash
-curl -sSL https://install.python-poetry.org | python3 -
-poetry self update
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-and ensuring that `poetry` is available in your `$PATH`
+and ensuring that `uv` is available in your `$PATH`
 
 Install the dependencies:
 
 ```bash
-poetry install
-poetry self add poetry-plugin-export
-poetry config warnings.export false
-poetry run pre-commit install
+uv install
+uv tool install pre-commit --with pre-commit-uv --force-reinstall
+uvx pre-commit install
 ```
