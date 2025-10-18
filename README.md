@@ -14,7 +14,8 @@ and ensuring that `uv` is available in your `$PATH`
 Install the dependencies:
 
 ```bash
-uv install
+uv lock
+uv sync
 uv tool install pre-commit --with pre-commit-uv --force-reinstall
 uvx pre-commit install
 ```
